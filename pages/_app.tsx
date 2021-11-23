@@ -1,13 +1,14 @@
+import '../styles/globals.css'
+
 import type { AppProps } from "next/app";
 import { builder, Builder } from "@builder.io/react";
 import { Header } from "../components/Header/Header";
+import { ModelView } from '../components/ModelView/ModelView';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
-
+// Initialize once builder with the apiKey
 builder.init("builder-public-key");
 
+// Register Header component so it's available in the drag-and-drop tool
 Builder.registerComponent(Header, {
   name: 'Header',
   inputs: [
@@ -21,3 +22,12 @@ Builder.registerComponent(Header, {
     }
   ]
 });
+
+// Register ModelView component as dragable component in the builder editor
+Builder.registerComponent(ModelView, {
+  name: 'Model View',
+});
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}

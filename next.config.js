@@ -1,8 +1,6 @@
-const bundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: !!process.env.BUNDLE_ANALYZE,
-})
-
-module.exports = bundleAnalyzer({
+/** @type {import('next').NextConfig} */
+module.exports = {
+  reactStrictMode: true,
   images: {
     domains: ['cdn.builder.io'],
   },
@@ -20,4 +18,4 @@ module.exports = bundleAnalyzer({
       },
     ]
   },
-})
+}
