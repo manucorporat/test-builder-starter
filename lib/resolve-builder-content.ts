@@ -1,6 +1,6 @@
-import { builder, Builder } from '@builder.io/react';
+import { builder, Builder } from "@builder.io/react";
 
-Builder.isStatic = true
+Builder.isStatic = true;
 
 export async function resolveBuilderContent(
   modelName: string,
@@ -15,10 +15,12 @@ export async function resolveBuilderContent(
     : {
         staleCacheSeconds: 140,
       };
-  const page = await builder.get(modelName, {
-    userAttributes: targetingAttributes,
-    ...cacheOpts,
-  }).toPromise();
+  const page = await builder
+    .get(modelName, {
+      userAttributes: targetingAttributes,
+      ...cacheOpts,
+    })
+    .toPromise();
 
-  return page || null
+  return page || null;
 }

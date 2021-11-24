@@ -7,16 +7,17 @@ import Head from "next/head";
 export async function getStaticProps({
   params,
 }: GetStaticPropsContext<{ page: string[] }>) {
-
-  const page = await builder.get("page", {
-    userAttributes: {
-      urlPath: "/" + (params?.page?.join("/") || ""),
-    },
-  }).toPromise()
+  const page = await builder
+    .get("page", {
+      userAttributes: {
+        urlPath: "/" + (params?.page?.join("/") || ""),
+      },
+    })
+    .toPromise();
 
   return {
     props: {
-      page: page || null
+      page: page || null,
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in

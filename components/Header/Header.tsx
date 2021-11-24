@@ -1,4 +1,3 @@
-
 export interface HeaderProps {
   title: string;
   subtitle: string;
@@ -7,12 +6,8 @@ export interface HeaderProps {
 export function Header(props: HeaderProps) {
   return (
     <div className="Header">
-      <header>
-        {props.title}
-      </header>
-      <footer>
-        {props.subtitle}
-      </footer>
+      <header>{props.title}</header>
+      <footer>{props.subtitle}</footer>
     </div>
   );
 }

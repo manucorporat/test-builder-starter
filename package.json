@@ -7,10 +7,11 @@
     "start": "next dev",
     "serve": "next start",
     "lint": "next lint",
-    "prettier": "prettier --write pages"
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@builder.io/react": "^1.1.47",
+    "@react-three/drei": "^7.22.6",
     "@react-three/fiber": "^7.0.19",
     "@vercel/fetch": "^6.1.0",
     "next": "^12.0.4",
@@ -24,6 +25,7 @@
     "@types/three": "^0.134.0",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
+    "prettier": "^2.4.1",
     "typescript": "4.5.2"
   },
   "license": "MIT"
