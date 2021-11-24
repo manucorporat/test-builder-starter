@@ -3,16 +3,11 @@ import { Suspense, useEffect, useState } from 'react'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 export interface ModelViewProps {
-  title: string;
-  subtitle: string;
+  src: string;
 }
 
-function GLBModel() {
-  const [url, set] = useState('/Parrot.glb')
-  useEffect(() => {
-    setTimeout(() => set('/Stork.glb'), 2000)
-  }, [])
-  const { scene } = useLoader(GLTFLoader, url) as any
+function GLBModel(props: {src: string}) {
+  const { scene } = useLoader(GLTFLoader, props.src) as any
   return <primitive object={scene} />
 }
 
@@ -22,7 +17,7 @@ export function ModelView(props: ModelViewProps) {
     <Canvas>
       <ambientLight />
       <Suspense fallback={null}>
-        <GLBModel />
+        <GLBModel src={props.src} />
       </Suspense>
     </Canvas>
   );

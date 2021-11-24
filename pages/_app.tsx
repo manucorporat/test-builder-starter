@@ -26,6 +26,14 @@ Builder.registerComponent(Header, {
 // Register ModelView component as dragable component in the builder editor
 Builder.registerComponent(ModelView, {
   name: 'Model View',
+  inputs: [
+    {
+      name: 'src',
+      type: 'file',
+      allowedFileTypes: ['gltf', 'glb'],
+      defaultValue: 'https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Avocado/glTF-Binary/Avocado.glb'
+    }
+  ]
 });
 
 export default function MyApp({ Component, pageProps }: AppProps) {
