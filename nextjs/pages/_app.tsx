@@ -2,8 +2,9 @@ import "../styles/globals.css";
 
 import type { AppProps } from "next/app";
 import { builder, Builder } from "@builder.io/react";
-import { Header } from "../components/Header/Header";
-import { ShoesViewer } from "../components/ShoesViewer/ShoesViewer";
+import { Header } from "../components/Header";
+import { ShoesViewer } from "../components/ShoesViewer";
+import { SourceCodeLink } from "../components/SourceCodeLink";
 
 // Initialize once builder with the apiKey
 builder.init("builder-public-key");
@@ -32,7 +33,34 @@ Builder.registerComponent(ShoesViewer, {
       type: 'number',
       friendlyName: 'Number of shoes',
       defaultValue: 100,
+    },
+    {
+      name: 'ambientLight',
+      type: 'number',
+      friendlyName: 'Ambient light intensity',
+      defaultValue: 0.5,
     }
+  ]
+});
+
+
+// Register ModelView component as dragable component in the builder editor
+Builder.registerComponent(SourceCodeLink, {
+  name: "SourceCodeLink",
+  inputs: [
+    {
+      name: 'fileName',
+      type: 'string',
+      required: true,
+    },
+    {
+      name: 'line',
+      type: 'number',
+    },
+    {
+      name: 'column',
+      type: 'number',
+    },
   ]
 });
 
