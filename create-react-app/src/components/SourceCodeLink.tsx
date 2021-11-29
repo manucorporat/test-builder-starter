@@ -18,6 +18,9 @@ export const SourceCodeLink: FunctionComponent<SourceCodeLinkProps> = ({fileName
   const url = `${window.location.origin}/__open-stack-frame-in-editor?${params.toString()}`;
   return (
     <div
+      style={{
+        cursor: 'pointer'
+      }}
       onClick={() => {
         fetch(url);
       }}
