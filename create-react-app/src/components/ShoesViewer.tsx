@@ -44,8 +44,10 @@ export function ShoesViewer({nuShoes, ambientLight}: any) {
   );
 }
 
+const URL = 'https://cdn.builder.io/o/assets%2FYJIGb4i01jvw0SRdL5Bt%2F3d11140faf9a4cc4868d9813c554d75e?alt=media&token=80a12e21-07c8-49fe-a1ba-01bc1beb39f0&apiKey=YJIGb4i01jvw0SRdL5Bt';
+
 function Shoes({ range }: any) {
-  const { nodes, materials } = useGLTF("https://public.sethealth.app/shoe.glb") as any;
+  const { nodes, materials } = useGLTF(URL) as any;
   return (
     <Instances
       range={range}

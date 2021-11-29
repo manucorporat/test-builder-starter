@@ -53,7 +53,6 @@ Builder.registerComponent(ShoesViewer, {
 });
 
 
-// Register ModelView component as dragable component in the builder editor
 Builder.registerComponent(withChildren(SourceCodeLink), {
   name: "SourceCodeLink",
   inputs: [

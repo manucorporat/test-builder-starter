@@ -6,7 +6,7 @@ export interface SourceCodeLinkProps {
   column?: number;
 }
 
-export const SourceCodeLink: FunctionComponent<SourceCodeLinkProps> = ({fileName, line, column, children, ...rest}) => {
+export const SourceCodeLink: FunctionComponent<SourceCodeLinkProps> = ({fileName, line, column, children}) => {
   const params = new URLSearchParams();
   params.set('fileName', fileName);
   if (line) {
@@ -17,8 +17,12 @@ export const SourceCodeLink: FunctionComponent<SourceCodeLinkProps> = ({fileName
   }
   const url = `${window.location.origin}/__open-stack-frame-in-editor?${params.toString()}`;
   return (
-    <a {...rest} href={url} target='_blank'>
+    <div
+      onClick={() => {
+        fetch(url);
+      }}
+    >
       {children}
-    </a>
+    </div>
   );
 }
