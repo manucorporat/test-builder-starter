@@ -17,7 +17,7 @@ export const SourceCodeLink: FunctionComponent<SourceCodeLinkProps> = ({fileName
   }
   const url = `${window.location.origin}/__open-stack-frame-in-editor?${params.toString()}`;
   return (
-    <a {...rest} href={url}>
+    <a {...rest} href={url} target='_blank'>
       {children}
     </a>
   );
