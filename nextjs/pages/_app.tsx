@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 
 import type { AppProps } from "next/app";
-import { builder, Builder } from "@builder.io/react";
+import { builder, Builder, withChildren } from "@builder.io/react";
 import { Header } from "../components/Header";
 import { ShoesViewer } from "../components/ShoesViewer";
 import { SourceCodeLink } from "../components/SourceCodeLink";
@@ -45,7 +45,7 @@ Builder.registerComponent(ShoesViewer, {
 
 
 // Register ModelView component as dragable component in the builder editor
-Builder.registerComponent(SourceCodeLink, {
+Builder.registerComponent(withChildren(SourceCodeLink), {
   name: "SourceCodeLink",
   inputs: [
     {

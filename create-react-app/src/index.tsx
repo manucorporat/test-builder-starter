@@ -6,6 +6,7 @@ import { builder, Builder } from '@builder.io/sdk';
 import { SourceCodeLink } from './components/SourceCodeLink';
 import { ShoesViewer } from './components/ShoesViewer';
 import { Header } from './components/Header';
+import { withChildren } from '@builder.io/react';
 
 builder.init("builder-public-key");
 
@@ -53,7 +54,7 @@ Builder.registerComponent(ShoesViewer, {
 
 
 // Register ModelView component as dragable component in the builder editor
-Builder.registerComponent(SourceCodeLink, {
+Builder.registerComponent(withChildren(SourceCodeLink), {
   name: "SourceCodeLink",
   inputs: [
     {
