@@ -45,7 +45,7 @@ export function ShoesViewer({nuShoes, ambientLight}: any) {
 }
 
 function Shoes({ range }: any) {
-  const { nodes, materials } = useGLTF("/shoe.glb") as any;
+  const { nodes, materials } = useGLTF("https://public.sethealth.app/shoe.glb") as any;
   return (
     <Instances
       range={range}

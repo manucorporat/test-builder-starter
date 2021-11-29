@@ -61,6 +61,14 @@ Builder.registerComponent(SourceCodeLink, {
       name: 'column',
       type: 'number',
     },
+  ],
+  hideFromInsertMenu: true,
+  canHaveChildren: true,
+  defaultChildren: [
+    {
+      '@type': '@builder.io/sdk:Element',
+      component: { name: 'Text', options: { text: 'Open source code' } }
+    }
   ]
 });
 
